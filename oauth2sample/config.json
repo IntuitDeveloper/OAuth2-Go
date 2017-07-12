@@ -1,0 +1,12 @@
+{
+	"port": ":9090",
+	"clientId": "Q05MIy6oCjARUBablYbLLth6D7xh3dpMwWxOLnHYKM4WIqWBDP",
+	"clientSecret": "8dFUOx16fwJ4ZLNN7onJQ0vFG8ybkHf05uaz6T4b",
+	"redirectUri": "http://localhost:9090/oauth2redirect",
+	"intuitAccountingAPIHost": "https://sandbox-quickbooks.api.intuit.com",
+	"discoveryAPIHost": "https://developer.api.intuit.com/.well-known/openid_sandbox_configuration",
+	"c2qbScope": "com.intuit.quickbooks.accounting",
+	"siwiScope": "openid profile email phone address",
+	"getAppNowScope": "openid profile email phone address com.intuit.quickbooks.accounting"
+	
+}
