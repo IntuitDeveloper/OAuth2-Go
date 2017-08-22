@@ -16,7 +16,7 @@ import (
  */
 func ConnectToQuickbooks(w http.ResponseWriter, r *http.Request) {
 	log.Println("inside connectToQuickbooks ")
-	http.Redirect(w, r, PrepareUrl(config.OAuthConfig.GetAppNowScope, GenerateCSRF()), http.StatusSeeOther)
+	http.Redirect(w, r, PrepareUrl(config.OAuthConfig.C2QBScope, GenerateCSRF()), http.StatusSeeOther)
 }
 
 /*
