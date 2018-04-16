@@ -65,7 +65,7 @@ func PrepareUrl(scope string, csrf string) string {
 	parameters.Add("state", csrf)
 	Url.RawQuery = parameters.Encode()
 
-	log.Println("Encoded URL is %q\n", Url.String())
+	log.Printf("Encoded URL is %q\n", Url.String())
 	return Url.String()
 
 }
