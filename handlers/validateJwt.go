@@ -17,8 +17,8 @@ import (
 	"math/big"
 	"time"
 
-	"oauth2sample/cache"
-	"oauth2sample/config"
+	"github.com/IntuitDeveloper/OAuth2-Go/cache"
+	"github.com/IntuitDeveloper/OAuth2-Go/config"
 
 	"strings"
 )

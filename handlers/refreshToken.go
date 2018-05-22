@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"oauth2sample/cache"
+	"github.com/IntuitDeveloper/OAuth2-Go/cache"
 )
 
 /*
