@@ -27,20 +27,20 @@ In order to successfully run this sample app you need a few things:
  
 ## First Use Instructions
 
-1. Clone the GitHub repo to your computer and place it in the src directory of your $GOPATH
-2. Fill in the [`config.json`](oauth2sample/config.json) file values (clientId, clientSecret) by copying over from the keys section for your app.
+1. `go get -d github.com/IntuitDeveloper/OAuth2-Go`
+2. Fill in the [`config.json`](github.com/IntuitDeveloper/OAuth2-Go/config.json) file values (clientId, clientSecret) by copying over from the keys section for your app.
 
 ## Running the code
 
 Once the sample app code is on your computer, you can do the following steps to run the app:
 
 1. Install the sample using the following commands<br />
-	`cd $GOPATH/src/oauth2sample`<br />
+	`cd $GOPATH/src/github.com/IntuitDeveloper/OAuth2-Go`<br />
 	`go install`<br />
 2. Run the sample by using one of the two commands below<br />
-	`$GOPATH/bin/oauth2sample`<br />
+	`$GOPATH/bin/OAuth2-Go`<br />
 	or <br />
-	`oauth2sample`<br />
+	`OAuth2-Go`<br />
 3. Wait until the terminal output displays the "running server on  :9090" message.
 4. Your app should be up now in http://localhost:9090/ 
 5. The oauth2 callback endpoint in the sample app is http://localhost:9090/oauth2redirect

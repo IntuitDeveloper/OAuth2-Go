@@ -3,8 +3,9 @@ package main
 import (
 	"log"
 	"net/http"
-	"oauth2sample/config"
-	"oauth2sample/handlers"
+
+	"github.com/IntuitDeveloper/OAuth2-Go/config"
+	"github.com/IntuitDeveloper/OAuth2-Go/handlers"
 )
 
 func main() {
