@@ -36,6 +36,9 @@ func RetrieveBearerToken(code string) (*BearerTokenResponse, error) {
 	request.Header.Set("Authorization", "Basic "+basicAuth())
 
 	resp, err := client.Do(request)
+	if err != nil {
+		log.Fatalln(err)
+	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {

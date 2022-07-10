@@ -24,6 +24,9 @@ func CallDiscoveryAPI() {
 	request.Header.Set("accept", "application/json")
 
 	resp, err := client.Do(request)
+	if err != nil {
+		log.Fatalln(err)
+	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {

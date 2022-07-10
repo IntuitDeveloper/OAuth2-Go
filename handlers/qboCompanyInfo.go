@@ -33,6 +33,9 @@ func GetCompanyInfo(w http.ResponseWriter, r *http.Request) {
 	request.Header.Set("Authorization", "Bearer "+accessToken)
 
 	resp, err := client.Do(request)
+	if err != nil {
+		log.Fatalln(err)
+	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
