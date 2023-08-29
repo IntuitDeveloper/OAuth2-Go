@@ -94,14 +94,15 @@ func ValidateIDToken(idToken string) bool {
 
 		//check if keys[0] belongs to the right kid
 		headerKid := header.KID
-		if headerKid != jwksResponse.KEYS[0].KID {
-			log.Fatalln("no keys found for the header ", err)
-			return false
-		}
+        key, err := getKeyByKeyID(jwksResponse.KEYS, headerKid)
 
-		//get the exponent (e) and modulo (n) to form the PublicKey
-		e := jwksResponse.KEYS[0].E
-		n := jwksResponse.KEYS[0].N
+        if err != nil {
+		    log.Fatalln("no keys found for the header ", err)
+			return false
+        }
+        //get the exponent (e) and modulo (n) to form the PublicKey
+		e := key.E
+		n := key.N
 
 		//build the public key
 		pubKey, err := getPublicKey(n, e)
@@ -192,4 +193,20 @@ func verify(signature, data []byte, pubKey *rsa.PublicKey) error {
 	}
 
 	return nil
+}
+
+/*
+ * retrieve keys matching the token kid
+ */
+func getKeyByKeyID(a []Keys, tknkid string) (Keys, error) {
+
+	for i := 0; i < len(a); i++ {
+        if a[i].KID == tknkid {
+			return a[i], nil
+		}
+    }
+
+	err := errors.New("Token is not valid, kid from token and certificate don't match")
+	var b Keys
+	return b, err
 }
