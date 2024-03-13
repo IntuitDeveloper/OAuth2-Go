@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"bytes"
+	"errors"
 
 	"crypto"
 	"crypto/rsa"
