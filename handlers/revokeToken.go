@@ -35,6 +35,9 @@ func RevokeToken(w http.ResponseWriter, r *http.Request) {
 	request.Header.Set("Authorization", "Basic "+basicAuth())
 
 	resp, err := client.Do(request)
+	if err != nil {
+		log.Fatalln(err)
+	}
 	defer resp.Body.Close()
 
 	responseString := map[string]string{"response": "Revoke successful"}
